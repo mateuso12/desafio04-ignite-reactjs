@@ -6,6 +6,15 @@ import Input from '../Input';
 import { useRef } from 'react';
 import { FormHandles } from '@unform/core';
 
+interface TypeFood {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  available: boolean;
+  image: string;
+}
+
 interface AddFood {
   image: string;
   name: string;
@@ -17,7 +26,7 @@ interface ModalEditFoodProps {
   isOpen: boolean;
   setIsOpen: () => void;
   handleUpdateFood: (data: AddFood ) => void
-  editingFood: () => void;
+  editingFood: TypeFood;
 } 
 
 export default function ModalEditFood({ isOpen,setIsOpen, handleUpdateFood, editingFood  }: ModalEditFoodProps) {
